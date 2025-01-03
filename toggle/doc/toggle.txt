@@ -1,0 +1,130 @@
+*toggle.txt* quickly toggle options
+
+                                         /)    ~
+                         _/_ ____   _   //  _  ~
+                         (__(_)(_/_(_/_(/__(/_ ~
+                              .-/ .-/          ~
+                             (_/ (_/           ~
+
+                 Keybindings for toggling Vim options.
+
+========================================================================
+CONTENTS                                                *ToggleContents*
+
+    1. Usage ................ |ToggleUsage|
+    2. Mappings ............. |ToggleMappings|
+    3. License .............. |ToggleLicense|
+    4. Bugs ................. |ToggleBugs|
+    5. Contributing ......... |ToggleContributing|
+    6. Changelog ............ |ToggleChangelog|
+    7. Credits .............. |ToggleCredits|
+
+========================================================================
+USAGE                                                      *ToggleUsage*
+
+This plugin provides several normal mode mappings for quickly toggling
+Vim options. By default the mappings all begin with <Leader>t. For
+example, to toggle distraction free mode use: <Leader>td. Each mapping
+can be changed by using its subject from below. For example, to use
+_d as the mapping to toggle distraction free mode:
+>
+    nmap _d <Plug>ToggleDistractionFree
+<
+
+========================================================================
+MAPPINGS                                                *ToggleMappings*
+
+                                                  *ToggleBackground*
+<Leader>tb       If 'background' is set to "light", then set it to
+                 "dark" and vise versa.
+
+                                                  *ToggleCursorline*
+<Leader>tc       Toggle the 'cursorline' option.
+
+                                       *:DF* *ToggleDistractionFree*
+<Leader>td       Toggle distraction free mode. Sometimes the Vim
+                 interface is extremely useful and sometimes you
+                 just want a blank slate to do some writing. This
+                 turns off 'cursorline', 'ruler', 'number',
+                 'relativenumber', 'cursorcolumn', 'colorcolumn',
+                 'laststatus', and 'showtabline' when distraction
+                 free mode is toggled on. When toggled off, the
+                 settings are restored to the value they had before
+                 enabling distraction free mode. An equivalent
+                 command `:DF` is also provided.
+
+                                                  *ToggleFoldcolumn*
+<Leader>tf       Toggle between setting the 'foldcolumn' to 0 or 4
+                 columns wide, essentially turning it on or off.
+
+                                                    *ToggleHlsearch*
+<Leader>th       Toggle the 'hlsearch' option. Searching is often
+                 done for the purpose of cursor movement rather
+                 than finding something. In this case, highlighting
+                 the results is usually not what is desired. It is
+                 probably best to keep 'hlsearch' off by default
+                 and use this toggle to quickly turn it on when
+                 needed.
+
+                                                  *ToggleIgnorecase*
+<Leader>ti       Toggle the 'ignorecase' option. This toggle is
+                 not really too helpful since using |/\c| or |/\C|
+                 in the search pattern is just as quick to type.
+
+                                                        *ToggleList*
+<Leader>tl       Toggle the 'list' option.
+
+                                                      *ToggleNumber*
+<Leader>tn       Toggle the 'number' option.
+
+                                                 *ToggleColorcolumn*
+<Leader>to       Toggle the 'colorcolumn' by placing it at column
+                 81 and 82 if 'textwidth' is set to 0, otherwise
+                 the column is shown at the 'textwidth' plus one
+                 and 'textwidth' plus two.
+
+                                                    *ToggleQuickfix*
+<Leader>tq       Toggle the |quickfix| window. Close the quickfix
+                 window if open and go back to last active window
+                 from before it was opened. Open the quickfix
+                 window if closed, but only if there are errors.
+                 This works similar to `:cwindow` except the
+                 quickfix window can be toggled closed even if
+                 there are errors.
+
+                                              *ToggleRelativenumber*
+<Leader>tr       Toggle the 'relativenumber' option.
+
+                                                       *ToggleSpell*
+<Leader>ts       Toggle the 'spell' option. Set the desired
+                 'spelllang' first if necessary.
+
+                                                *ToggleCursorcolumn*
+<Leader>tu       Toggle the 'cursorcolumn' option.
+
+                                                        *ToggleWrap*
+<Leader>tw       Toggle the 'wrap' option.
+
+                                                  *ToggleCrosshairs*
+<Leader>tx       Toggle the 'cursorline' and 'cursorcolumn' options
+                 together to enable or disable crosshairs to easily
+                 target the cursor location.
+
+========================================================================
+LICENSE                                                  *ToggleLicense*
+
+Same terms as Vim itself (see |license|)
+
+========================================================================
+CHANGELOG                                              *ToggleChangelog*
+
+v0.1.0
+  * Initial release.
+
+========================================================================
+CREDITS                                                  *ToggleCredits*
+
+Copyright (c) 2017 Rand Schneck <i@rasch.co>
+
+========================================================================
+ vim:ft=help:tw=72:ts=4:et:
