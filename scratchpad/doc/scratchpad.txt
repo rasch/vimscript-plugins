@@ -1,0 +1,115 @@
+*scratchpad.txt* a basic scratch pad in a buffer
+
+                                      /)            /) ~
+                 _   _  __  _  _/_ _ (/  __   _   _(/  ~
+                /_)_(__/ (_(_(_(__(__/ )_/_)_(_(_(_(_  ~
+                                      .-/              ~
+                                     (_/               ~
+
+             Commands and mappings to create scratch buffers.
+
+========================================================================
+CONTENTS                                            *ScratchpadContents*
+
+    1. Introduction ......... |ScratchpadIntroduction|
+    2. Commands ............. |ScratchpadCommands||
+    3. Mappings ............. |ScratchpadMappings|
+    4. License .............. |ScratchpadLicense|
+    5. Bugs ................. |ScratchpadBugs|
+    6. Contributing ......... |ScratchpadContributing|
+    7. Changelog ............ |ScratchpadChangelog|
+    8. Credits .............. |ScratchpadCredits|
+
+========================================================================
+INTRODUCTION                                    *ScratchpadIntroduction*
+
+A scratch pad for disposable short-lived notes is incredibly convenient.
+It can be used as a playground for testing out code snippets. For
+example, one may desire to see how a particular function works. Using
+the commands or mappings below, it is quick to put the desired function
+into a scratch buffer, add the test code, and run the content of the
+scratch buffer through an external command (see |:write_c| or
+|:range!|).
+
+========================================================================
+COMMANDS                                            *ScratchpadCommands*
+
+:Scratch[!] [option] ..                                   *:Scratch*
+                 Open a scratch pad in a new buffer. The scratch
+                 buffer is removed if it becomes hidden. When the
+                 <bang> is used the buffer is created using `:enew!`
+                 rather than `:enew`. Be warned that using the
+                 <bang> will lose any unsaved changes in the
+                 current buffer unless 'hidden' is set. Options can
+                 be given to set locally in the scratch buffer. For
+                 example: >
+                     :Scratch ft=javascript wrap
+<
+:[N]SScratch [option] ..                                 *:SScratch*
+                 Open a scratch pad in a split window. By default,
+                 the window size is 10 lines, but can be changed
+                 using N. Options can be given to set locally in
+                 the scratch buffer.
+
+:VScratch [option] ..                                    *:VScratch*
+                 Open a scratch pad in a vertical split. Options
+                 can be given to set locally in the scratch buffer.
+
+:[range]PScratch [option] ..                             *:PScratch*
+                 Open a scratch pad in a split window and put the
+                 contents of the current file into it. If range is
+                 given, then all lines from the range are put into
+                 the scratch buffer. The window height is set to
+                 the height of the range plus two lines. Options
+                 can be given to set locally in the scratch buffer.
+                 For example: >
+                     13,26PScratch ft=vim
+<
+========================================================================
+MAPPINGS                                            *ScratchpadMappings*
+
+                                                           *Scratch*
+<Leader>se       Run the `:Scratch` command. The default mapping
+                 can be changed. For example, to use _s, add the
+                 following to $MYVIMRC: >
+                     nmap _s <Plug>Scratch
+<
+                                                          *SScratch*
+<Leader>ss       Run the `:SScratch` command. The default mapping
+                 can be changed. For example, to use _s, add the
+                 following to $MYVIMRC: >
+                     nmap _s <Plug>SScratch
+<
+                                                          *VScratch*
+<Leader>sv       Run the `:VScratch` command. The default mapping
+                 can be changed. For example, to use _s, add the
+                 following to $MYVIMRC: >
+                     nmap _s <Plug>VScratch
+<
+                                                          *PScratch*
+<Leader>sp       This mapping is similar to the `:PScratch` command,
+                 except it puts the content of the defualt paste
+                 register into the scratch buffer. Just yank the
+                 desired text before running this mapping. The
+                 default mapping can be changed. For example, to
+                 use _s, add the following to $MYVIMRC: >
+                     nmap _s <Plug>PScratch
+<
+========================================================================
+LICENSE                                              *ScratchpadLicense*
+
+Same terms as Vim itself (see |license|)
+
+========================================================================
+CHANGELOG                                          *ScratchpadChangelog*
+
+v0.1.0
+  * Initial release.
+
+========================================================================
+CREDITS                                              *ScratchpadCredits*
+
+Copyright (c) 2017 Rand Schneck <i@rasch.co>
+
+========================================================================
+ vim:ft=help:tw=72:ts=4:et:
