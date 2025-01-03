@@ -1,0 +1,67 @@
+*hexhl.txt* highlight background color of hex triplets
+
+            ##     ## ######## ##     ## ##     ## ##       ~
+            ##     ## ##        ##   ##  ##     ## ##       ~
+            ##     ## ##         ## ##   ##     ## ##       ~
+            ######### ######      ###    ######### ##       ~
+            ##     ## ##         ## ##   ##     ## ##       ~
+            ##     ## ##        ##   ##  ##     ## ##       ~
+            ##     ## ######## ##     ## ##     ## ######## ~
+
+    Highlight hexadecimal color codes by setting their guibg color.
+
+========================================================================
+CONTENTS                                                 *HexHlContents*
+
+    1. Introduction ......... |HexHlIntroduction|
+    2. Commands ............. |HexHlCommands|
+    3. License .............. |HexHlLicense|
+    4. Bugs ................. |HexHlBugs|
+    5. Contributing ......... |HexHlContributing|
+    6. Changelog ............ |HexHlChangelog|
+    7. Credits .............. |HexHlCredits|
+
+========================================================================
+INTRODUCTION                                         *HexHlIntroduction*
+
+Hex colors are commonly used in interface design. This plugin makes it
+easier to see what a hex color actually looks like by setting its
+background color to its value. It works for both three digit [#639] and
+six digit [#663399] variations. If this plugin is installed the hex
+colors above should be highlighted. Now that's #bada55!
+
+This plugin requires either gui Vim or terminal Vim compiled with
+|+termguicolors| and 'termguicolors' enabled. The terminal emulator must
+also have true color support. See |xterm-true-color| for help with
+enabling true color in the terminal. #decaff #c0ffee
+
+hotpink coral salmon tomato steelblue and all the other named CSS colors
+are also highlighted!
+
+========================================================================
+COMMANDS                                                 *HexHlCommands*
+
+:HexHl                                                      *:HexHl*
+                 Highlight all hex colors in current buffer.
+
+:HexHlClear                                            *:HexHlClear*
+                 Clear all hex color highlights.
+
+========================================================================
+LICENSE                                                   *HexHlLicense*
+
+Same terms as Vim itself (see |license|)
+
+========================================================================
+CHANGELOG                                               *HexHlChangelog*
+
+v0.1.0
+  * Initial release.
+
+========================================================================
+CREDITS                                                   *HexHlCredits*
+
+Copyright (c) 2017 Rand Schneck <i@rasch.co>
+
+========================================================================
+ vim:ft=help:tw=72:ts=4:et:
